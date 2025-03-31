@@ -4,7 +4,7 @@ import LogIn from './components/logIn/LogIn';
 function App() {
   return (
     <div className="App">
-      <LogIn/>
+      <h1>This is my editttt</h1>
     </div>
   );
 }
