@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import './LogIn.css'
 
 const LogIn = () => {
@@ -9,9 +9,9 @@ const LogIn = () => {
         <h1>BizzUp</h1>
       </div>
       <div className="login-form">
-        <h3>username</h3>
+        <label>username</label>
         <input type="mail" name="mail"/>
-        <h3>password</h3>
+        <label>password</label>
         <input type="password" name="password"/>
       </div>
     </div>
