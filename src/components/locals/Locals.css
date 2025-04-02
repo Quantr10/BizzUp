@@ -1,0 +1,23 @@
+.locals-page {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Make the list scrollable or responsive */
+  .locals-list {
+    flex: 1; /* Takes available space */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    max-width: 60%;
+    overflow-y: auto;
+  }
+  
+  .locals-map-section {
+    flex: 1;
+    min-width: 400px;
+  }
+  
