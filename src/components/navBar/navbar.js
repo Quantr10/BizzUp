@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Navbar.css";
+import "./NavBar.css";
 import { FaUser } from "react-icons/fa";
 
-const Navbar = () => {
+const NavBar = () => {
   const [active, setActive] = useState("HOME");
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -38,4 +38,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;

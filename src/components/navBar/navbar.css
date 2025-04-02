@@ -1,73 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ff4500;
-  }
-  
-  .up {
-    font-style: italic;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 5px 40px; /* Reduced padding to make navbar smaller */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  position: fixed; /* Keeps navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Smaller Logo & Shifted Slightly Left */
+.logo {
+  font-size: 28px; /* Reduced size */
+  font-weight: 700;
+  color: #ff4500;
+  font-style: italic;
+  margin-right: auto; /* Pushes everything else to the right */
+  margin-left: -10px; /* Moves BizzUp slightly to the left */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 30px; /* Reduced gap for a tighter navbar */
+  margin-left: auto;
+}
+
+.nav-item {
+  cursor: pointer;
+  font-size: 16px; /* Slightly smaller text */
+  color: #ff4500;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: #d13400;
+}
+
+/* User Icon */
+.user-icon {
+  font-size: 22px; /* Reduced size */
+  color: #ff4500;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* Responsive Design */
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
   .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-item {
-    cursor: pointer;
-    font-size: 16px;
-    color: #ff4500;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .nav-item:hover,
-  .nav-item.active {
-    color: #d13400;
-  }
-  
-  .user-icon {
-    font-size: 20px;
-    color: #ff4500;
-    cursor: pointer;
-  }
-  
-  .menu-toggle {
     display: none;
-    background: none;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 65px; /* Adjusted for smaller navbar */
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 50px;
-      left: 0;
-      width: 100%;
-      background: white;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-  
-    .nav-links.open {
-      display: flex;
-    }
-  
-    .menu-toggle {
-      display: block;
-    }
+
+  .nav-links.open {
+    display: flex;
   }
-  
+
+  .nav-item {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
