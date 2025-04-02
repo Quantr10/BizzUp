@@ -1,14 +1,28 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './LogIn.css';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import {auth} from "../Firebase";
+import {toast} from "react-toastify";
 
 const LogIn = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Username:', username);
-    console.log('Password:', password);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log("User logged in successfully");
+      window.location.href="/profile";
+      toast.success("User logged in successfully", {
+        position: "top-center",
+      })
+    } catch (error) {
+      console.log(error.message);
+      toast.error(error.message, {
+        position: "bottom-center",
+      });
+    }
   };
 
   return (
@@ -19,17 +33,16 @@ const LogIn = () => {
       </h2>
       <form onSubmit={handleSubmit} className="login-form">
         <div className="form-group">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="email">Email</label>
           <input
-            type="text"
-            id="username"
-            placeholder="Enter your username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
-
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <input

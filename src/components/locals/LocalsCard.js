@@ -1,26 +1,25 @@
 import React from 'react';
 import './LocalsCard.css';
 
-const LocalsCard = ({ local, onHover, onLeave }) => {
+const LocalsCard = ({ local, onClick, selected }) => {
   return (
     <div
-      className="card"
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
+      className={`card-horizontal ${selected ? 'selected' : ''}`}
+      onClick={onClick}
     >
-      <div className="card-img">
+      <div className="card-image">
         <img src={local.image} alt={local.name} />
       </div>
-      <div>
+      <div className="card-info">
         <h3>{local.name}</h3>
-      </div>
-      <div className="card-content">
-        <span>⭐ {local.rating}</span>
-        <span>View Details</span>
+        <p className="description">{local.shortDescription}</p>
+        <div className="meta">
+          <span className="rating">⭐ {local.rating}</span>
+          <span className="details-link">View Details</span>
+        </div>
       </div>
     </div>
   );
 };
-
 
 export default LocalsCard;

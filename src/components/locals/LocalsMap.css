@@ -7,30 +7,3 @@
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
-  
-  /* Optional: Add a loading text style */
-  .map-loading {
-    text-align: center;
-    padding: 2rem;
-    font-size: 1.2rem;
-    color: #444;
-  }
-  
-.map-info-window {
-  max-width: 200px;
-}
-
-  /* Optional: Info window customizations */
-  .map-info-window h3 {
-    margin: 0 0 5px 0;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .map-info-window p {
-    margin: 0;
-    font-size: 0.85rem;
-    text-align: justify;
-    color: #666;
-  }
-  

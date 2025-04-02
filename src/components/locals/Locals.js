@@ -5,7 +5,7 @@ import LocalsData from './LocalsData';
 import './Locals.css';
 
 const Locals = () => {
-  const [hoveredLocal, setHoveredLocal] = useState(null);
+  const [selectedLocal, setSelectedLocal] = useState(null);
 
   return (
     <div className="locals-page">
@@ -14,13 +14,13 @@ const Locals = () => {
           <LocalsCard
             key={index}
             local={local}
-            onHover={() => setHoveredLocal(local)}
-            onLeave={() => setHoveredLocal(null)}
+            onClick={() => setSelectedLocal(local)}
+            selected={selectedLocal?.name === local.name}
           />
         ))}
       </div>
       <div className="locals-map-section">
-        <LocalsMap hoveredLocal={hoveredLocal} />
+        <LocalsMap selectedLocal={selectedLocal} setSelectedLocal={setSelectedLocal} />
       </div>
     </div>
   );
