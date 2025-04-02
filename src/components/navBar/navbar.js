@@ -1,92 +1,41 @@
-// Create a style element for our CSS
-const style = document.createElement('style');
-style.textContent = `
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background-color: #f5f5f5;
-  }
-  
-  .bizup-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .bizup-logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .bizup-links {
-    display: flex;
-    gap: 30px;
-  }
-  
-  .bizup-link {
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    transition: color 0.3s;
-    cursor: pointer;
-  }
-  
-  .bizup-link:hover {
-    color: #000;
-  }
-`;
-document.head.appendChild(style);
+import React, { useState } from "react";
+import "./Navbar.css";
+import { FaUser } from "react-icons/fa";
 
-// Create the navigation bar
-const navBar = document.createElement('nav');
-navBar.className = 'bizup-nav';
+const Navbar = () => {
+  const [active, setActive] = useState("HOME");
+  const [menuOpen, setMenuOpen] = useState(false);
 
-// Create logo
-const logo = document.createElement('div');
-logo.className = 'bizup-logo';
-logo.textContent = 'BizUp';
-navBar.appendChild(logo);
+  const handleNavClick = (section) => {
+    setActive(section);
+    setMenuOpen(false); // Close menu on selection (for mobile)
+  };
 
-// Create nav links container
-const navLinks = document.createElement('div');
-navLinks.className = 'bizup-links';
+  return (
+    <nav className="navbar">
+      <div className="logo">Bizz<span className="up">Up</span></div>
+      
+      <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+        {["HOME", "DEALS", "LOCALS", "MY REWARDS", "SCAN"].map((item) => (
+          <span
+            key={item}
+            className={`nav-item ${active === item ? "active" : ""}`}
+            onClick={() => handleNavClick(item)}
+          >
+            {item}
+          </span>
+        ))}
+      </div>
 
-// Navigation items
-const menuItems = ['HOME', 'DEALS', 'LOCALS', 'MY REWARDS', 'SCAN'];
+      <div className="user-icon">
+        <FaUser />
+      </div>
 
-// Create each link
-menuItems.forEach(item => {
-  const link = document.createElement('a');
-  link.className = 'bizup-link';
-  link.textContent = item;
-  
-  // Add click handler
-  link.addEventListener('click', () => {
-    console.log(`Navigating to: ${item}`);
-    // You would replace this with actual navigation logic
-    document.querySelectorAll('.bizup-link').forEach(l => l.style.color = '#555');
-    link.style.color = '#000';
-  });
-  
-  navLinks.appendChild(link);
-});
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </button>
+    </nav>
+  );
+};
 
-navBar.appendChild(navLinks);
-document.body.prepend(navBar);
-
-// Bonus: Make it stick to top on scroll
-window.addEventListener('scroll', () => {
-  navBar.style.position = window.scrollY > 10 ? 'fixed' : 'static';
-  navBar.style.width = '100%';
-  navBar.style.top = '0';
-  navBar.style.zIndex = '1000';
-});
+export default Navbar;
