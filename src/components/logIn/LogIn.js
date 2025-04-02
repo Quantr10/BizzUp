@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react';
 import './LogIn.css';
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -23,6 +24,19 @@ const LogIn = () => {
         position: "bottom-center",
       });
     }
+=======
+import React, { useState } from 'react';
+import './LogIn.css';
+
+const LogIn = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Username:', username);
+    console.log('Password:', password);
+>>>>>>> 844df0b (travo login)
   };
 
   return (
@@ -33,6 +47,7 @@ const LogIn = () => {
       </h2>
       <form onSubmit={handleSubmit} className="login-form">
         <div className="form-group">
+<<<<<<< HEAD
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -43,6 +58,19 @@ const LogIn = () => {
             required
           />
         </div>
+=======
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter your username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </div>
+
+>>>>>>> 844df0b (travo login)
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <input
@@ -76,4 +104,8 @@ const LogIn = () => {
     </div>
   );
 };
+<<<<<<< HEAD
 export default LogIn;
+=======
+export default LogIn;
+>>>>>>> 844df0b (travo login)
