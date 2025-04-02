@@ -11,14 +11,10 @@
     "firebase": "^11.6.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-<<<<<<< HEAD
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.4.1",
     "react-scripts": "5.0.1",
     "react-toastify": "^11.0.5",
-=======
-    "react-scripts": "^3.0.1",
->>>>>>> 748397f (navbar (1))
     "web-vitals": "^2.1.4"
   },
   "scripts": {
