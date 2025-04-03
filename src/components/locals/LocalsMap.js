@@ -5,11 +5,6 @@ import './LocalsMap.css';
 import reddot from '../../assets/reddot.png'
 import redpin from '../../assets/redpin.png'
 
-const containerStyle = {
-  width: '100%',
-  height: '500px',
-};
-
 const center = {
   lat: 39.6410,
   lng: -86.8625,

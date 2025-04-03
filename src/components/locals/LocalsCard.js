@@ -13,6 +13,7 @@ const LocalsCard = ({ local, onClick, selected }) => {
       <div className="card-info">
         <h3>{local.name}</h3>
         <p className="description">{local.shortDescription}</p>
+        <p className="address">{local.address}</p> {/* ← new line */}
         <div className="meta">
           <span className="rating">⭐ {local.rating}</span>
           <span className="details-link">View Details</span>
