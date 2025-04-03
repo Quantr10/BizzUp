@@ -1,12 +1,15 @@
+
 import { useState } from 'react';
 import './LogIn.css';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import {auth} from "../Firebase";
 import {toast} from "react-toastify";
 
+
 const LogIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,10 +28,11 @@ const LogIn = () => {
     }
   };
 
+
   return (
     <div className="login-container">
       <h2 className="welcome-text">
-      <span className="welcome-message">Welcome to</span> 
+      <span className="welcome-message">Welcome to</span>
       <span className="brand"> BizzUp</span>
       </h2>
       <form onSubmit={handleSubmit} className="login-form">
@@ -55,6 +59,7 @@ const LogIn = () => {
           />
         </div>
 
+
         <div className="options">
           <div className="remember-me">
             <input type="checkbox" id="rememberMe" />
@@ -65,12 +70,14 @@ const LogIn = () => {
           </a>
         </div>
 
+
         <button type="submit" className="login-btn">
           LOGIN
         </button>
 
+
         <div className="register-link">
-          New User? <a href="#register">Register</a>
+          New User? <a href="register">Register</a>
         </div>
       </form>
     </div>
