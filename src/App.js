@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import LogIn from './components/logIn/LogIn';
 import Locals from './components/locals/Locals';
-import NavBar from './components/navBar/NavBar';
+import NavBar from './components/navBar/navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
