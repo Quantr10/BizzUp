@@ -1,8 +1,10 @@
 .card-horizontal {
   display: flex;
   border: 2px solid transparent;
+  margin-bottom: 2px;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 5px;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   background-color: white;
   max-width: 100%;
@@ -10,10 +12,10 @@
   min-height: 120px;
 }
 
-.card-horizontal:hover {
+/* .card-horizontal:hover {
   border: 2px solid #ff4500;
   transition: box-shadow 0.2s ease, border 0.2s ease;
-}
+} */
 
 .card-horizontal.selected {
   border: 2px solid #ff4500;
@@ -79,14 +81,19 @@
   font-weight: 500;
 }
 
-.details-link {
-  color: #ff4500;
-  text-decoration: underline;
-  font-weight: 500;
-}
-
 .card-info .address {
   font-size: 13px;
   color: #888;
   margin-bottom: 8px;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #ff4500;
+  cursor: pointer;
 }
