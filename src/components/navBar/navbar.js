@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./navbar.css";
+import "./NavBar.css";
 import { FaUser } from "react-icons/fa";
 
 const NavBar = () => {
