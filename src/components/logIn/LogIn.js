@@ -16,7 +16,7 @@ const LogIn = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("User logged in successfully");
-      window.location.href="/profile";
+      window.location.href="/home";
       toast.success("User logged in successfully", {
         position: "top-center",
       })
@@ -30,56 +30,58 @@ const LogIn = () => {
 
 
   return (
-    <div className="login-container">
-      <h2 className="welcome-text">
-      <span className="welcome-message">Welcome to</span>
-      <span className="brand"> BizzUp</span>
-      </h2>
-      <form onSubmit={handleSubmit} className="login-form">
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-
-
-        <div className="options">
-          <div className="remember-me">
-            <input type="checkbox" id="rememberMe" />
-            <label htmlFor="rememberMe">Remember</label>
+    <div className="login-page">
+      <div className="login-container">
+        <h2 className="welcome-text">
+        <span className="welcome-message">Welcome to</span>
+        <span className="brand"> BizzUp</span>
+        </h2>
+        <form onSubmit={handleSubmit} className="login-form">
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
-          <a href="#forgot-password" className="forgot-password">
-            Forgot Password?
-          </a>
-        </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
 
-        <button type="submit" className="login-btn">
-          LOGIN
-        </button>
+          <div className="options">
+            <div className="remember-me">
+              <input type="checkbox" id="rememberMe" />
+              <label htmlFor="rememberMe">Remember</label>
+            </div>
+            <a href="#forgot-password" className="forgot-password">
+              Forgot Password?
+            </a>
+          </div>
 
 
-        <div className="register-link">
-          New User? <a href="register">Register</a>
-        </div>
-      </form>
+          <button type="submit" className="login-btn">
+            LOGIN
+          </button>
+
+
+          <div className="register-link">
+            New User? <a href="register">Register</a>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

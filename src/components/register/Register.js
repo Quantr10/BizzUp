@@ -1,37 +1,64 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../logIn/LogIn.css';
+import {auth, db} from "../Firebase";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import {setDoc, doc} from "firebase/firestore";
+import {toast} from "react-toastify";
+
 
 
 const Register = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-   
-    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-
- 
-    const togglePasswordVisibility = () => {
-      setIsPasswordVisible(!isPasswordVisible);
-    };
-
-
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-
-
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
   };
 
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      const user = auth.currentUser;
+      console.log(user);
+      if(user) {
+        await setDoc(doc(db, "Users", user.uid), {
+          email: user.email,
+          name: name,
+        });
+      }
+      console.log("User Registered Successfully");
+      toast.success("User Registered Successfully!", {
+        position: "top-center",
+      });
+    } catch (error) {
+      console.log(error.message);
+      toast.success(error.message, {
+        position: "bottom-center",
+      });
+    }
+  };
 
   return (
     <div className="login-container">
       <h2 className="brand">Register</h2>
-      <form onSubmit={handleSubmit} className="login-form">
+      <form onSubmit={handleRegister} className="login-form">
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+        
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
