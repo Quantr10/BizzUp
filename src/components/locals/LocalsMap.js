@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import LocalsData from './LocalsData';
 import './LocalsMap.css';
 import reddot from '../../assets/reddot.png'
-import redpin from '../../assets/redpin.png'
+import redpin from '../../assets/redpin.png';
 
-const center = {
-  lat: 39.6410,
-  lng: -86.8625,
+const defaultCenter = {
+  lat: 39.64323822800205,
+  lng: -86.86339359225649,
 };
 
-// Google Maps icons
 const redDot = reddot;
 const redPin = redpin;
 
@@ -19,13 +18,26 @@ const LocalsMap = ({ selectedLocal, setSelectedLocal }) => {
     googleMapsApiKey: 'AIzaSyBXoaJPlf8UdjzE8poYOZjBI8-zymIlL-Y',
   });
 
+  const mapRef = useRef(null);
+
+  const onLoad = (map) => {
+    mapRef.current = map;
+  };
+
+  useEffect(() => {
+    if (mapRef.current && selectedLocal) {
+      mapRef.current.panTo({ lat: selectedLocal.lat, lng: selectedLocal.lng });
+    }
+  }, [selectedLocal]);
+
   if (!isLoaded) return <div>Loading map...</div>;
 
   return (
     <GoogleMap
       mapContainerClassName="map-container"
-      center={center}
-      zoom={16}
+      center={defaultCenter}
+      zoom={18}
+      onLoad={onLoad}
     >
       {LocalsData.map((local, index) => {
         const isSelected = selectedLocal?.name === local.name;

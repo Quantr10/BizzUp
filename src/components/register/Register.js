@@ -29,6 +29,7 @@ const Register = () => {
         await setDoc(doc(db, "Users", user.uid), {
           email: user.email,
           name: name,
+          points: 0,
         });
       }
       console.log("User Registered Successfully");
@@ -44,7 +45,8 @@ const Register = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-page">
+      <div className="login-container">
       <h2 className="brand">Register</h2>
       <form onSubmit={handleRegister} className="login-form">
         <div className="form-group">
@@ -75,22 +77,21 @@ const Register = () => {
           <label htmlFor="password">Password</label>
           <div className="password-field">
             <input
-                type={isPasswordVisible ? 'text' : 'password'}
-                id="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <span className="eye-icon" onClick={togglePasswordVisibility}>
-                {isPasswordVisible ? <FaEye /> : <FaEyeSlash />}
-              </span>
-            </div>
+              type={isPasswordVisible ? 'text' : 'password'}
+              id="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <span className="eye-icon" onClick={togglePasswordVisibility}>
+              {isPasswordVisible ? <FaEye /> : <FaEyeSlash />}
+            </span>
           </div>
-
+        </div>
 
         <p className="terms">
-          By creating an account, you agree to our <span className="termsofservice">Terms of Service</span>.
+          By creating an account, you agree to our <span className="termsofservice">Terms</span>.
         </p>
 
 
@@ -104,6 +105,8 @@ const Register = () => {
         Already have an account? <a href="login">Log In</a>
       </div>
     </div>
+    </div>
+    
   );
 };
 

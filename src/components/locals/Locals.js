@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import LocalsCard from './LocalsCard';
 import LocalsMap from './LocalsMap';
-import LocalsInfoPanel from './LocalsInfoPanel'; // <- import the info panel
+import LocalsInfoPanel from './LocalsInfoPanel';
+import SliderImg from '../sliderImg/SliderImg';
 import LocalsData from './LocalsData';
 import './Locals.css';
 
@@ -15,7 +16,9 @@ const Locals = () => {
   );
 
   return (
-    <div className="locals-page">
+    <div>
+            {/* <SliderImg/> */}
+            <div className="locals-page">
       <div className="locals-list">
         {!infoLocal ? (
           <>
@@ -60,6 +63,8 @@ const Locals = () => {
           setSelectedLocal={setSelectedLocal}
         />
       </div>
+    </div>
+
     </div>
   );
 };

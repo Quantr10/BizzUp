@@ -5,6 +5,7 @@ import Locals from './components/locals/Locals';
 import Home from './components/home/Home';
 import NavBar from './components/navBar/NavBar';
 import Register from './components/register/Register';
+import Scan from './components/scan/Scan';
 
 import { BrowserRouter as Router, Routes, Route , Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
           <Route path="/locals" element={<Locals />} />
+          <Route path="/scan" element={<Scan />} />
         </Routes>
         <ToastContainer />
       </div>

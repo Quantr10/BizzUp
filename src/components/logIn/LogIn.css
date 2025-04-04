@@ -14,12 +14,11 @@
   min-height: 100vh;
 }
 
-
 .login-container {
   background: #fff;
   padding: 5%;
   border-radius: 8px;
-  width: 500px;
+  width: 510px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   text-align: center;
 }
@@ -37,72 +36,69 @@ text-align: center;
 
 .login-form{
   margin-top: -0.5rem;
-  }
-  .form-group{
+}
+
+.form-group{
   margin-top: 1rem;
-  }
-  .brand {
-    color: #ff4409;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 2rem;
-    display:block;
-    margin-top: -0.3rem;
-  }
+}
+
+.brand {
+  color: #ff4409;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 2rem;
+  display:block;
+  margin-top: -0.3rem;
+}
  
-
-
-  .login-form .form-group {
-    margin-bottom: 0.7rem;
-    text-align: left;
-    color: #ff4409;
-    font-size: 0.9rem;
-  }
+.login-form .form-group {
+  margin-bottom: 0.7rem;
+  text-align: left;
+  color: #ff4409;
+  font-size: 0.9rem;
+}
  
  
-  .login-form .form-group input {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    outline: none;
-  }
+.login-form .form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  outline: none;
+}
 
-
-  .options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-  }
-
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
   
-  .remember-me {
-    display: flex;
-    align-items: center;
-  }
+.remember-me {
+  display: flex;
+  align-items: center;
+}
  
-  .remember-me label {
-    margin-left: 0.25rem;
-    font-size: 0.9rem;
-    color: #ff4409;
-  }
+.remember-me label {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
+  color: #ff4409;
+}
  
-  .forgot-password {
-    text-decoration: none;
-    color: #ff4409;
-    font-size: 0.9rem;
-  }
-  .terms{
+.forgot-password {
+  text-decoration: none;
+  color: #ff4409;
+  font-size: 0.9rem;
+}
+
+.terms{
   margin: 0rem 0rem;
   font-size: 0.9rem;
   text-align: center;
   color: #ff4409;
   margin-bottom:0.9rem;
-}
-
-  
+}  
   
 .login-btn {
   width: 100%;
@@ -131,9 +127,11 @@ text-align: center;
   color: #ff4409;
   font-weight: 600;
 }
+
 .password-field{
 position: relative;
 }
+
 .eye-icon {
   position: absolute;
   right: 1rem;
@@ -143,6 +141,7 @@ position: relative;
   font-size: 1.2rem;
   color: #ff4409;    
 }
+
 .termsofservice{
   color: #ff4409;
   font-weight:bold;

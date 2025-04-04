@@ -22,6 +22,8 @@ const NavBar = () => {
       navigate("/locals");
     } else if (section === "HOME") {
       navigate("/home");
+    } else if (section === "SCAN") {
+        navigate("/scan");
     }
 
   };
