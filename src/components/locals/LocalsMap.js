@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import LocalsData from './LocalsData';
 import './LocalsMap.css';
-import reddot from '../../assets/reddot.png'
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../Firebase';
+import reddot from '../../assets/reddot.png';
 import redpin from '../../assets/redpin.png';
 
 const defaultCenter = {
@@ -13,7 +14,7 @@ const defaultCenter = {
 const redDot = reddot;
 const redPin = redpin;
 
-const LocalsMap = ({ selectedLocal, setSelectedLocal }) => {
+const LocalsMap = ({ locals, selectedLocal, setSelectedLocal }) => {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: 'AIzaSyBXoaJPlf8UdjzE8poYOZjBI8-zymIlL-Y',
   });
@@ -39,12 +40,11 @@ const LocalsMap = ({ selectedLocal, setSelectedLocal }) => {
       zoom={18}
       onLoad={onLoad}
     >
-      {LocalsData.map((local, index) => {
-        const isSelected = selectedLocal?.name === local.name;
-
+      {locals.map((local) => {
+        const isSelected = selectedLocal?.id === local.id;
         return (
           <Marker
-            key={index}
+            key={local.id}
             position={{ lat: local.lat, lng: local.lng }}
             icon={{
               url: isSelected ? redPin : redDot,
@@ -58,5 +58,6 @@ const LocalsMap = ({ selectedLocal, setSelectedLocal }) => {
     </GoogleMap>
   );
 };
+
 
 export default LocalsMap;

@@ -6,6 +6,8 @@ import Home from './components/home/Home';
 import NavBar from './components/navBar/NavBar';
 import Register from './components/register/Register';
 import Scan from './components/scan/Scan';
+import Deals from './components/deals/Deals';
+import UploadLocals from './components/locals/UploadLocals'; // Ensu
 
 import { BrowserRouter as Router, Routes, Route , Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -27,6 +29,9 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/locals" element={<Locals />} />
           <Route path="/scan" element={<Scan />} />
+          <Route path="/deals" element={<Deals />} />
+          {/* <Route path="/upload" element={<UploadLocals />} /> */}
+
         </Routes>
         <ToastContainer />
       </div>

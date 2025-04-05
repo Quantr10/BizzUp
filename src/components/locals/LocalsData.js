@@ -1,5 +1,20 @@
-import img1 from '../../assets/1.png';
+import almostHome from '../../assets/localsImg/almostHome.jpeg';
+import antiques from '../../assets/localsImg/antiques.jpg';
+import blushing from '../../assets/localsImg/blushing.jpg';
+import bodega from '../../assets/localsImg/bodega.jpg';
+import breadworks from '../../assets/localsImg/breadworks.jpeg';
+import brittsBloming from '../../assets/localsImg/brittsBloming.png';
 import conspire from '../../assets/localsImg/conspire.jpg';
+import donJulio from '../../assets/localsImg/donJulio.jpg';
+import flutteringDuck from '../../assets/localsImg/flutteringDuck.jpg';
+import lostHollow from '../../assets/localsImg/lostHollow.jpg';
+import marvins from '../../assets/localsImg/marvins.jpg';
+import scoops from '../../assets/localsImg/scoops.jpg';
+import silverBell from '../../assets/localsImg/silverBell.jpg';
+import starbucks from '../../assets/localsImg/starbucks.jpg';
+import tacoWapo from '../../assets/localsImg/taco wapo.webp';
+import tapHouse from '../../assets/localsImg/tapHouse.jpg';
+import theWhisk from '../../assets/localsImg/theWhisk.png';
 
 const LocalsData = [
   {
@@ -24,7 +39,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: silverBell,
     name: "Silver Bell Flowers",
     lat: 39.643564309305845,
     lng:  -86.86313110664017,
@@ -45,7 +60,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: tapHouse,
     name: "TapHouse Burgers",
     lat: 39.643383598605915,
     lng:  -86.86472930219064,
@@ -66,7 +81,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: brittsBloming,
     name: "Britt’s Blooming Boutique",
     lat: 39.64345264354609,
     lng:  -86.86426042920606,
@@ -87,7 +102,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: flutteringDuck,
     name: "The Fluttering Duck",
     lat: 39.641692100473485,
     lng:  -86.86360647714814,
@@ -108,7 +123,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: "",
     name: "Burdge Boots & Boutique",
     lat: 39.643099152465325,
     lng: -86.86558434156458,
@@ -129,7 +144,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: almostHome,
     name: "Almost Home",
     lat: 39.64494278603445,
     lng: -86.8651023541528,
@@ -150,7 +165,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: tacoWapo,
     name: "Taco Wapo",
     lat: 39.64375015067762,
     lng: -86.86104431704884,
@@ -171,7 +186,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: donJulio,
     name: "Don Julio",
     lat: 39.644858605334456,
     lng:  -86.86488585657182,
@@ -192,7 +207,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: lostHollow,
     name: "Lost Hollow",
     lat: 39.64455395611986,
     lng: -86.86331773640174,
@@ -213,7 +228,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: marvins,
     name: "Marvin’s",
     lat: 39.642345090643566,
     lng: -86.86273791145601,
@@ -234,7 +249,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: blushing,
     name: "Blushing Beaus Boutique",
     lat: 39.643900599625,
     lng: -86.86470009441732,
@@ -268,7 +283,7 @@ const LocalsData = [
 
 
   {
-    image: img1,
+    image: theWhisk,
     name: "The Whisk",
     lat: 39.64365308023032,
     lng: -86.86554221209343,
@@ -289,7 +304,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: bodega,
     name: "The Bodega",
     lat: 39.64373053658851,
     lng:  -86.8656718785607,
@@ -310,7 +325,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: scoops,
     name: "Scoops Ice Cream Parlor",
     lat: 39.64366801488559,
     lng: -86.86435123154759,
@@ -331,7 +346,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: breadworks,
     name: "Breadworks By Bridges",
     lat: 39.64314088475463,
     lng:  -86.86431975802495,
@@ -352,7 +367,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: "",
     name: "Bridges Craft Pizza & Wine Bar",
     lat: 39.64449504491711,
     lng: -86.86422249524844,
@@ -373,7 +388,7 @@ const LocalsData = [
     }
   },
   {
-    image: img1,
+    image: "",
     name: "Moores Bar & Restaurant",
     lat: 39.643529460290125,
     lng: -86.86435385857934,

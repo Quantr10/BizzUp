@@ -1,0 +1,46 @@
+  
+  .local-business-card {
+    flex: 0 0 auto;
+    width: 280px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+ 
+ .local-business-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  }
+  
+  .business-image {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+  
+  .business-info {
+    padding: 10px 12px;
+  }
+  
+  .business-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .business-desc {
+    font-size: 13px;
+    color: #555;
+    margin: 4px 0;
+  }
+  
+  .business-rating {
+    font-size: 13px;
+    font-weight: 500;
+    color: #ff4500;
+  }
+  

@@ -4,7 +4,7 @@
   margin-bottom: 2px;
   overflow: hidden;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 12px;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   background-color: white;
   max-width: 100%;
@@ -19,6 +19,7 @@
 
 .card-horizontal.selected {
   border: 2px solid #ff4500;
+  /* background-color: #fff8f2; */
   transition: box-shadow 0.2s ease, border 0.2s ease;
 }
 

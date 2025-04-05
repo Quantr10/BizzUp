@@ -24,6 +24,8 @@ const NavBar = () => {
       navigate("/home");
     } else if (section === "SCAN") {
         navigate("/scan");
+    } else if (section === "DEALS") {
+        navigate("/deals");
     }
 
   };

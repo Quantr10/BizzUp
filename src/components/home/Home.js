@@ -2,6 +2,7 @@ import {auth, db} from "../Firebase";
 import {doc, getDoc} from "firebase/firestore";
 import SliderImg from '../sliderImg/SliderImg'; // adjust the path if needed
 import { useUser } from '../contexts/UserContext';
+import LocalBusinessSlider from "./LocalBusinessSlider";
 
 function Home() {
   const { userDetails, loading } = useUser();
@@ -11,9 +12,7 @@ function Home() {
   return (
     <div>
         <SliderImg />
-      <h3>Welcome {userDetails?.name}</h3>
-      <p>Email: {userDetails?.email}</p>
-      <button onClick={() => auth.signOut()}>Logout</button>
+        <LocalBusinessSlider />
     </div>
   );
 }
