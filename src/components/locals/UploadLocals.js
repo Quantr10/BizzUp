@@ -1,52 +1,29 @@
-import React from 'react';
-import { AiOutlineInfoCircle, AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
-import './LocalsCard.css';
+import { db } from '../Firebase';
+import { collection, addDoc } from 'firebase/firestore';
+import LocalsData from '../locals/LocalsData';
+import { useEffect } from 'react';
 
-const LocalsCard = ({ local, onClick, onInfoClick, selected, onLoveToggle, isLoved }) => {
-  return (
-    <div className={`card-horizontal ${selected ? 'selected' : ''}`} onClick={onClick}>
-      <div className="card-image">
-        <img src={local.image} alt={local.name} />
-      </div>
-      <div className="card-info">
-        <h3>{local.name}</h3>
-        <p className="description">{local.shortDescription}</p>
-        <p className="address">{local.address}</p>
-        <div className="meta">
-          <span className="rating">⭐ {local.rating}</span>
-          <span className="icons">
-            <AiOutlineInfoCircle
-              className="icon"
-              onClick={(e) => {
-                e.stopPropagation();
-                onInfoClick();
-              }}
-              title="More Info"
-            />
-            {isLoved ? (
-              <AiFillHeart
-                className="icon loved"
-                title="Unfavorite"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onLoveToggle(local.id);
-                }}
-              />
-            ) : (
-              <AiOutlineHeart
-                className="icon"
-                title="Favorite"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onLoveToggle(local.id);
-                }}
-              />
-            )}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
+const UploadLocals = () => {
+  useEffect(() => {
+    const uploadData = async () => {
+      try {
+        const localsRef = collection(db, 'Locals');
+
+        for (const local of LocalsData) {
+          await addDoc(localsRef, local);
+          console.log(`Uploaded: ${local.name}`);
+        }
+
+        console.log("All data uploaded successfully!");
+      } catch (error) {
+        console.error("Error uploading data: ", error);
+      }
+    };
+
+    uploadData();
+  }, []);
+
+  return <div>Uploading LocalsData to Firestore... Check console logs.</div>;
 };
 
-export default LocalsCard;
+export default UploadLocals;

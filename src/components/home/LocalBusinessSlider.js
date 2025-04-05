@@ -31,6 +31,7 @@ const LocalBusinessSlider = () => {
         {locals.map((local) => (
           <LocalBusinessCard
             key={local.id}
+            id={local.id}
             name={local.name}
             image={local.image}
             shortDescription={local.shortDescription}

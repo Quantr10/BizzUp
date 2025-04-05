@@ -1,20 +1,23 @@
-import almostHome from '../../assets/localsImg/almostHome.jpeg';
+import almostHome from '../../assets/localsImg/almostHome.jpg';
 import antiques from '../../assets/localsImg/antiques.jpg';
+import bridges from '../../assets/localsImg/bridges.jpg';
+import tacoWapo from '../../assets/localsImg/tacoWapo.jpg';
 import blushing from '../../assets/localsImg/blushing.jpg';
 import bodega from '../../assets/localsImg/bodega.jpg';
-import breadworks from '../../assets/localsImg/breadworks.jpeg';
-import brittsBloming from '../../assets/localsImg/brittsBloming.png';
+import breadworks from '../../assets/localsImg/breadworks.jpg';
+import brittsBloming from '../../assets/localsImg/brittsBloming.jpg';
+import moores from '../../assets/localsImg/moores.jpg';
 import conspire from '../../assets/localsImg/conspire.jpg';
 import donJulio from '../../assets/localsImg/donJulio.jpg';
 import flutteringDuck from '../../assets/localsImg/flutteringDuck.jpg';
 import lostHollow from '../../assets/localsImg/lostHollow.jpg';
 import marvins from '../../assets/localsImg/marvins.jpg';
+import burdgeBoots from '../../assets/localsImg/burdgeBoots.jpg';
 import scoops from '../../assets/localsImg/scoops.jpg';
 import silverBell from '../../assets/localsImg/silverBell.jpg';
 import starbucks from '../../assets/localsImg/starbucks.jpg';
-import tacoWapo from '../../assets/localsImg/taco wapo.webp';
 import tapHouse from '../../assets/localsImg/tapHouse.jpg';
-import theWhisk from '../../assets/localsImg/theWhisk.png';
+import theWhisk from '../../assets/localsImg/theWhisk.jpg';
 
 const LocalsData = [
   {
@@ -123,7 +126,7 @@ const LocalsData = [
     }
   },
   {
-    image: "",
+    image: burdgeBoots,
     name: "Burdge Boots & Boutique",
     lat: 39.643099152465325,
     lng: -86.86558434156458,
@@ -367,7 +370,7 @@ const LocalsData = [
     }
   },
   {
-    image: "",
+    image: bridges,
     name: "Bridges Craft Pizza & Wine Bar",
     lat: 39.64449504491711,
     lng: -86.86422249524844,
@@ -388,7 +391,7 @@ const LocalsData = [
     }
   },
   {
-    image: "",
+    image: moores,
     name: "Moores Bar & Restaurant",
     lat: 39.643529460290125,
     lng: -86.86435385857934,

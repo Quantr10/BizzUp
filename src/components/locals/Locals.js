@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import LocalsCard from './LocalsCard';
 import LocalsMap from './LocalsMap';
-import LocalsInfoPanel from './LocalsInfoPanel';
 import SliderImg from '../sliderImg/SliderImg';
+import { useLocation } from 'react-router-dom';
 import { db } from '../Firebase';
 import { collection, getDocs, doc, updateDoc, getDoc } from 'firebase/firestore';
 import { useUser } from '../contexts/UserContext';
@@ -16,6 +16,7 @@ const Locals = () => {
   const [filteredByLove, setFilteredByLove] = useState(false);
   const { userDetails } = useUser();
   const [loveList, setLoveList] = useState([]);
+  const [localData, setLocalData] = useState(null);
 
   useEffect(() => {
     const fetchLocals = async () => {
@@ -42,6 +43,37 @@ const Locals = () => {
     fetchLocals();
     fetchLoveList();
   }, [userDetails]);
+
+  useEffect(() => {
+    const fetchLocalDetails = async () => {
+      if (infoLocal?.id) {
+        try {
+          const docRef = doc(db, 'Locals', infoLocal.id);
+          const docSnap = await getDoc(docRef);
+          if (docSnap.exists()) {
+            setLocalData(docSnap.data());
+          }
+        } catch (error) {
+          console.error('Error fetching local details:', error);
+        }
+      }
+    };
+
+    fetchLocalDetails();
+  }, [infoLocal]);
+
+  const location = useLocation();
+
+useEffect(() => {
+  if (location.state?.localId && locals.length > 0) {
+    const matched = locals.find((l) => l.id === location.state.localId);
+    if (matched) {
+      setInfoLocal(matched);
+      setSelectedLocal(matched);
+    }
+  }
+}, [location.state, locals]);
+
 
   const handleLoveToggle = async (localId) => {
     if (!userDetails?.uid) return;
@@ -94,7 +126,10 @@ const Locals = () => {
                   key={index}
                   local={local}
                   onClick={() => setSelectedLocal(local)}
-                  onInfoClick={() => setInfoLocal(local)}
+                  onInfoClick={() => {
+                    setInfoLocal(local);
+                    setLocalData(null);
+                  }}
                   selected={selectedLocal?.name === local.name}
                   isLoved={loveList.includes(local.id)}
                   onLoveToggle={() => handleLoveToggle(local.id)}
@@ -103,19 +138,34 @@ const Locals = () => {
             )}
           </>
         ) : (
-          <LocalsInfoPanel
-            local={infoLocal}
-            onClose={() => setInfoLocal(null)}
-          />
+          localData ? (
+            <div className="info-panel">
+              <button className="close-btn" onClick={() => setInfoLocal(null)}>← Back</button>
+              <img src={localData.image} alt={localData.name} className="info-img" />
+              <h2>{localData.name}</h2>
+              <p className="description">{localData.shortDescription}</p>
+              <p><strong>Rating:</strong> ⭐ {localData.rating}</p>
+              <p><strong>Address:</strong> {localData.address}</p>
+              <p><strong>Phone:</strong> {localData.tel}</p>
+              <p><strong>Website:</strong> <a href={localData.website} target="_blank" rel="noopener noreferrer">{localData.website}</a></p>
+              <p><strong>Google Maps:</strong> <a href={localData.mapURL} target="_blank" rel="noopener noreferrer">View</a></p>
+              <h4>Opening Hours:</h4>
+              <ul>
+                {Object.entries(localData.hours).map(([day, time]) => (
+                  <li key={day}><strong>{day}:</strong> {time}</li>
+                ))}
+              </ul>
+            </div>
+          ) : <p>Loading details...</p>
         )}
       </div>
 
       <div className="locals-map-section">
-      <LocalsMap
-        locals={filteredLocals}
-        selectedLocal={selectedLocal}
-        setSelectedLocal={setSelectedLocal}
-      />
+        <LocalsMap
+          locals={filteredLocals}
+          selectedLocal={selectedLocal}
+          setSelectedLocal={setSelectedLocal}
+        />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './SliderImg.css';
 
 const images = [
-  require('../../assets/1.png'),
+  require('../../assets/localsImg/conspire.jpg'),
   require('../../assets/localsImg/conspire.jpg'),
 ];
 
