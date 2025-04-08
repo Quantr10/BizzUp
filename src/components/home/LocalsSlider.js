@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../Firebase';
 import { collection, getDocs } from 'firebase/firestore';
-import LocalBusinessCard from './LocalBusinessCard';
-import './LocalBusinessSlider.css';
+import LocalBusinessCard from './LocalsCard';
+import './HomePageSlider.css';
 import { FaArrowRight } from 'react-icons/fa';
-
+  
 const LocalBusinessSlider = () => {
   const [locals, setLocals] = useState([]);
 

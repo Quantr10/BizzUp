@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
+  background: #fff;
   padding: 5px 40px; /* Reduced padding to make navbar smaller */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   font-family: 'Poppins', sans-serif;
   position: sticky;
   top: 0;
@@ -28,13 +28,13 @@
 /* Navigation Links */
 .nav-links {
   display: flex;
-  gap: 30px; /* Reduced gap for a tighter navbar */
+  gap: 30px;
   margin-left: auto;
 }
 
 .nav-item {
   cursor: pointer;
-  font-size: 16px; /* Slightly smaller text */
+  font-size: 16px;
   color: #ff4409;
   font-weight: 600;
   transition: color 0.3s ease-in-out;
@@ -72,8 +72,8 @@
     top: 65px; /* Adjusted for smaller navbar */
     left: 0;
     width: 100%;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding: 20px 0;
   }
 
@@ -108,11 +108,11 @@
   top: 30px;
   right: 0;
   width: 200px;
-  background: white;
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   z-index: 1000;
 }
 
@@ -130,7 +130,7 @@
 
 .user-tab button {
   background: #ff4409;
-  color: white;
+  color: #fff;
   padding: 6px 10px;
   border: none;
   border-radius: 4px;

@@ -1,8 +1,7 @@
-import {auth, db} from "../Firebase";
-import {doc, getDoc} from "firebase/firestore";
-import SliderImg from '../sliderImg/SliderImg'; // adjust the path if needed
+import SliderImg from '../sliderImg/SliderImg';
 import { useUser } from '../contexts/UserContext';
-import LocalBusinessSlider from "./LocalBusinessSlider";
+import LocalsSlider from "./LocalsSlider";
+import DealsSlider from "./DealsSlider";
 
 function Home() {
   const { userDetails, loading } = useUser();
@@ -11,8 +10,9 @@ function Home() {
 
   return (
     <div>
-        <SliderImg />
-        <LocalBusinessSlider />
+      <SliderImg />
+      <DealsSlider/>
+      <LocalsSlider />
     </div>
   );
 }

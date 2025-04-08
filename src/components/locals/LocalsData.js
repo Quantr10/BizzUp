@@ -15,7 +15,6 @@ import marvins from '../../assets/localsImg/marvins.jpg';
 import burdgeBoots from '../../assets/localsImg/burdgeBoots.jpg';
 import scoops from '../../assets/localsImg/scoops.jpg';
 import silverBell from '../../assets/localsImg/silverBell.jpg';
-import starbucks from '../../assets/localsImg/starbucks.jpg';
 import tapHouse from '../../assets/localsImg/tapHouse.jpg';
 import theWhisk from '../../assets/localsImg/theWhisk.jpg';
 

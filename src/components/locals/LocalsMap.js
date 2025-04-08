@@ -1,8 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import './LocalsMap.css';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../Firebase';
 import reddot from '../../assets/red dot.png';
 import redpin from '../../assets/red pin.png';
 

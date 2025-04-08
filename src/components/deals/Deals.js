@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import mystery from '../../assets/mystery.png';
 import present from '../../assets/present.png';
 import { IoIosCloseCircle } from "react-icons/io";
+import { MdOutlineContentCopy } from "react-icons/md";
 
 
 import './Deals.css';
@@ -219,32 +220,57 @@ const Deals = () => {
                 <button className="buy-btn">BUY</button>
               </div>
             </div>
+            <div className="bonus-tasks">
+              <h4 className="box-title">Weekly Challenges</h4>
+              <div className="task-row">
+                <span className="task-desc">Share a photo</span>
+                <span className="task-points">+5 pts</span>
+              </div>
+              <div className="task-row">
+                <span className="task-desc">Leave a review</span>
+                <span className="task-points">+10 pts</span>
+              </div>
+            </div>
+
+            <div className="referral-section">
+              <h4 className="box-title">Referral Bonus</h4>
+              <p className="referral-desc">Invite your friends and earn 10 points</p>
+              
+              <div className="referral-box">
+                <div className="referral-code">
+                  <label>Your Code</label>
+                  <div className="code">QUAN10</div>
+                </div>
+                <div className="referral-link">
+                  <label>Share Link</label>
+                  <input type="text" value="https://myapp.com/signup?ref=QUAN10" readOnly />
+                </div>
+              </div>
+            </div>
           </div>
 
-            <div className="monthly-board">
-              <div className="monthly-board-content">
-                <h3 className="board-title">April's Wrap</h3>
-                <img src={present} alt="Rewards" className="rewards-img" />
-                <p className="board-highlight">Look what your friends got!</p>
+          <div className="monthly-board">
+              <h3 className="board-title">April's Wrap</h3>
+              <img src={present} alt="Rewards" className="rewards-img" />
+              <p className="board-highlight">Look what your friends got!</p>
 
-                <ol className="rank-list">
-                  <li>
-                    <span className="rank-num">1</span>
-                    < FaUserCircle className='avatar'/>
-                    <span className="name highlight">Quan Tran ‘27</span>
-                  </li>
-                  <li>
-                    <span className="rank-num">2</span>
-                    < FaUserCircle />
-                    <span className="name">Astra Vo ‘28</span>
-                  </li>
-                  <li>
-                    <span className="rank-num">3</span>
-                    < FaUserCircle />
-                    <span className="name">Emily Huynh ‘28</span>
-                  </li>
-                </ol>
-              </div>
+              <ol className="rank-list">
+                <li>
+                  <span className="rank-num">1</span>
+                  < FaUserCircle className='avatar'/>
+                  <span className="name highlight">Quan Tran ‘27</span>
+                </li>
+                <li>
+                  <span className="rank-num">2</span>
+                  < FaUserCircle />
+                  <span className="name">Astra Vo ‘28</span>
+                </li>
+                <li>
+                  <span className="rank-num">3</span>
+                  < FaUserCircle />
+                  <span className="name">Emily Huynh ‘28</span>
+                </li>
+              </ol>
           </div>
         </div>
       </div>

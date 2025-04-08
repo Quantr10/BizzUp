@@ -1,7 +1,15 @@
-import tacoWapo from '../../assets/localsImg/tacoWapo.jpg';
+import img1 from '../../assets/dealsImg/1.png'
+import img2 from '../../assets/dealsImg/2.png'
+import img3 from '../../assets/dealsImg/3.png'
+import img4 from '../../assets/dealsImg/4.png'
+import img5 from '../../assets/dealsImg/5.png'
+import img6 from '../../assets/dealsImg/6.png'
+import img7 from '../../assets/dealsImg/7.png'
+import img8 from '../../assets/dealsImg/8.png'
+
 const dealsData = [
     {
-      image: tacoWapo,
+      image: img1,
       title: "Date Night Special",
       points: 20,
       tagline: "The perfect pairing for a memorable night!",
@@ -13,34 +21,34 @@ const dealsData = [
       ],
       locations: ["Almost Home", "Marvin’s"],
     },
-    // {
-    //   image: tacoWapo,
-    //   title: "Boutique Duo",
-    //   points: 15,
-    //   tagline: "Look fabulous from head to toe!",
-    //   description:
-    //     "Treat yourself to a stylish outfit at Britt’s Blooming Boutique, then find the perfect pair of shoes at Shoe Sensation—and enjoy $5 off at one and 10% off at the other! Get that complete look for less while supporting local shops. It’s a win-win!",
-    //   discounts: [
-    //     "Get $5 off at Shoe Sensation",
-    //     "Get 10% off at Britt’s Blooming Boutique",
-    //   ],
-    //   locations: ["Shoe Sensation", "Britt’s Blooming Boutique"],
-    // },
-    // {
-    //   image: tacoWapo,
-    //   title: "Coffee & Crafts",
-    //   points: 15,
-    //   tagline: "Fuel your creativity, one sip at a time!",
-    //   description:
-    //     "Kickstart your day with your favorite brew at Starbucks, then get inspired by unique treasures at Conspire Contemporary Craft—10% off at both! Whether you're grabbing your morning pick-me-up or adding a handcrafted piece to your home, this combo will keep you energized and creative all day long.",
-    //   discounts: [
-    //     "Get 10% off at Conspire Contemporary Craft",
-    //     "Get $5 off at Starbucks",
-    //   ],
-    //   locations: ["Starbucks", "Conspire Contemporary Craft"],
-    // },
     {
-      image: tacoWapo,
+      image: img2,
+      title: "Boutique Duo",
+      points: 15,
+      tagline: "Look fabulous from head to toe!",
+      description:
+        "Treat yourself to a stylish outfit at Britt’s Blooming Boutique, then find the perfect pair of shoes at Shoe Sensation—and enjoy $5 off at one and 10% off at the other! Get that complete look for less while supporting local shops. It’s a win-win!",
+      discounts: [
+        "Get $5 off at Shoe Sensation",
+        "Get 10% off at Britt’s Blooming Boutique",
+      ],
+      locations: ["Shoe Sensation", "Britt’s Blooming Boutique"],
+    },
+    {
+      image: img4,
+      title: "Taco 'n' Tunes",
+      points: 20,
+      tagline: "Flavor + vibes = the ultimate combo",
+      description:
+        "Kick off your night with bold flavors at Taco Wapo, then head to Lost Hollow Beer Co. where the music and the brews are flowing. Grab your crew, this one’s made for good times.",
+      discounts: [
+        "Get 10% off your meal at Taco Wapo",
+        "Get $2 off your first drink at Lost Hollow Beer Co",
+      ],
+      locations: ["Taco Wapo", "Lost Hollow"],
+    },
+    {
+      image: img3,
       title: "Flower & Fashion",
       points: 15,
       tagline: "Refresh your look and your space!",
@@ -53,7 +61,7 @@ const dealsData = [
       locations: ["Blushing Beaus Boutique", "Silver Bell Flowers"],
     },
     {
-      image: tacoWapo,
+      image: img5,
       title: "Foodie Combo",
       points: 20,
       tagline: "Satisfy your cravings with the ultimate food crawl!",
@@ -65,21 +73,21 @@ const dealsData = [
       ],
       locations: ["Taco Wapo", "Marvin’s"],
     },
-    // {
-    //   image: tacoWapo,
-    //   title: "Vintage Lovers",
-    //   points: 15,
-    //   tagline: "Embrace the charm of the past and present!",
-    //   description:
-    //     "Explore hidden gems at Antiques & Collectibles and discover unique pieces at Conspire Contemporary Craft with 10% off at Conspire and 15% off at Antiques & Collectibles. Whether you’re into vintage treasures or handmade crafts, this combo lets you indulge in timeless finds and modern flair.",
-    //   discounts: [
-    //     "Get 10% off at Conspire Contemporary Craft",
-    //     "Get 15% off at Antiques & Collectibles",
-    //   ],
-    //   locations: ["Conspire Contemporary Craft", "Antiques & Collectibles"],
-    // },
     {
-      image: tacoWapo,
+      image: img6,
+      title: "Vintage Lovers",
+      points: 15,
+      tagline: "Embrace the charm of the past and present!",
+      description:
+        "Explore hidden gems at Antiques & Collectibles and discover unique pieces at Conspire Contemporary Craft with 10% off at Conspire and 15% off at Antiques & Collectibles. Whether you’re into vintage treasures or handmade crafts, this combo lets you indulge in timeless finds and modern flair.",
+      discounts: [
+        "Get 10% off at Conspire Contemporary Craft",
+        "Get 15% off at Antiques & Collectibles",
+      ],
+      locations: ["Conspire Contemporary Craft", "Antiques & Collectibles"],
+    },
+    {
+      image: img7,
       title: "Brunch & Boots",
       points: 25,
       tagline: "Boots and brunch—what could be better?",
@@ -91,19 +99,19 @@ const dealsData = [
       ],
       locations: ["The Fluttering Duck", "Burdge Boots & Boutique"],
     },
-    // {
-    //   image: tacoWapo,
-    //   title: "Shop & Sip",
-    //   points: 20,
-    //   tagline: "Shop ‘til you drop, then sip in style!",
-    //   description:
-    //     "Treat yourself to a shopping spree at Blushing Beaus Boutique, then unwind with your favorite drink at Starbucks—$3 off at Starbucks and 5% off at the boutique! Whether you're indulging in a fashion find or a coffee break, this combo has you covered.",
-    //   discounts: [
-    //     "Get $3 off at Starbucks",
-    //     "Get 5% off at Blushing Beaus Boutique",
-    //   ],
-    //   locations: ["Blushing Beaus Boutique", "Starbucks"],
-    // },    
+    {
+      image: img8,
+      title: "Craft & Snack",
+      points: 15,
+      tagline: "Get creative, then trea't yourself!",
+      description:
+        "Spend the afternoon browsing unique handmade goods at Conspire Contemporary Craft, then swing by The Bodega for a cozy little snack break. A perfect lowkey solo date or artsy hangout with a friend!",
+      discounts: [
+        "Get 15% off any item at Conspire Contemporary Craft",
+        "Get a free cookie with any drink at The Bodega",
+      ],
+      locations: ["Conspire Contemporary Craft", "The Bodega"],
+    },    
   ];
   
   export default dealsData;
