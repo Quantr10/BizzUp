@@ -1,16 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import './LocalsMap.css';
-import reddot from '../../assets/red dot.png';
-import redpin from '../../assets/red pin.png';
+import pin from '../../assets/pin.png';
+import placeHolder from '../../assets/placeholder.png';
 
 const defaultCenter = {
   lat: 39.64323822800205,
   lng: -86.86339359225649,
 };
 
-const redDot = reddot;
-const redPin = redpin;
+const redDot = pin;
+const redPin = placeHolder;
 
 const LocalsMap = ({ locals, selectedLocal, setSelectedLocal }) => {
   const { isLoaded } = useJsApiLoader({
@@ -46,7 +46,7 @@ const LocalsMap = ({ locals, selectedLocal, setSelectedLocal }) => {
             position={{ lat: local.lat, lng: local.lng }}
             icon={{
               url: isSelected ? redPin : redDot,
-              scaledSize: { width: 32, height: 32 },
+              scaledSize: isSelected ? { width: 50, height: 50 } : { width: 40, height: 40 },
             }}
             onClick={() => setSelectedLocal(local)}
             title={local.name}
