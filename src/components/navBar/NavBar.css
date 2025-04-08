@@ -19,7 +19,7 @@
 .logo {
   font-size: 28px; /* Reduced size */
   font-weight: 700;
-  color: #ff4500;
+  color: #ff4409;
   font-style: italic;
   margin-right: auto; /* Pushes everything else to the right */
   margin-left: -10px; /* Moves BizzUp slightly to the left */
@@ -35,7 +35,7 @@
 .nav-item {
   cursor: pointer;
   font-size: 16px; /* Slightly smaller text */
-  color: #ff4500;
+  color: #ff4409;
   font-weight: 600;
   transition: color 0.3s ease-in-out;
 }
@@ -48,7 +48,7 @@
 /* User Icon */
 .user-icon {
   font-size: 22px; /* Reduced size */
-  color: #ff4500;
+  color: #ff4409;
   margin-top: 4px;
   cursor: pointer;
   margin-left: 20px;
@@ -100,7 +100,7 @@
 .user-icon {
   font-size: 20px;
   cursor: pointer;
-  color: #ff4500;
+  color: #ff4409;
 }
 
 .user-tab {
@@ -129,7 +129,7 @@
 }
 
 .user-tab button {
-  background: #ff4500;
+  background: #ff4409;
   color: white;
   padding: 6px 10px;
   border: none;

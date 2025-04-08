@@ -21,7 +21,7 @@ const Scan = () => {
           value={qrValue}
           size={220}
           bgColor="#ffffff"
-          fgColor="#ff4500"
+          fgColor="#ff4409"
           level="H"
         />
         <p className="qr-note">Show this at checkout to earn rewards</p>

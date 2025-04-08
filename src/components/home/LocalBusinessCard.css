@@ -2,6 +2,7 @@
   flex: 0 0 auto;
   width: 280px;
   background-color: #fff;
+  height: 255px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -24,11 +25,11 @@
   border-top: none;
   border-radius: 0 0 12px 12px;
   transition: border 0.2s ease;
-  flex-grow: 1;
+  height: 115px;
 }
 
 .local-business-card:hover .business-info {
-  border-color: #ff4500;
+  border-color: #ff4409;
 }
 
 
@@ -47,6 +48,17 @@
 .business-rating {
   font-size: 13px;
   font-weight: 500;
-  color: #ff4500;
+  color: #ff4409;
 }
-  
+
+.rating {
+  color: #ff4409;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.icons {
+  display: flex;
+  font-size: 13px;
+  gap: 10px;
+}

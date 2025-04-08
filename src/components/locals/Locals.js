@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import LocalsCard from './LocalsCard';
 import LocalsMap from './LocalsMap';
-import SliderImg from '../sliderImg/SliderImg';
 import { useLocation } from 'react-router-dom';
 import { db } from '../Firebase';
 import { collection, getDocs, doc, updateDoc, getDoc } from 'firebase/firestore';
+import { FaPhone } from "react-icons/fa6";
+import { FaLocationDot } from "react-icons/fa6";
+import { BsGlobe } from "react-icons/bs";
+import { TiStarFullOutline } from "react-icons/ti";
+import { IoIosCloseCircle } from "react-icons/io";
+
 import { useUser } from '../contexts/UserContext';
 import './Locals.css';
 
@@ -99,6 +104,21 @@ useEffect(() => {
       <div className="locals-list">
         {!infoLocal ? (
           <>
+            <div className="filter-buttons">
+              <button
+                className={filteredByLove === false ? 'active' : ''}
+                onClick={() => setFilteredByLove(false)}
+              >
+                OUR LOCALS
+              </button>
+              <button
+                className={filteredByLove === true ? 'active' : ''}                
+                onClick={() => setFilteredByLove(true)}
+              >
+                MY FAVORITES
+              </button>
+            </div>
+
             <div className="search-bar">
               <input
                 type="text"
@@ -106,13 +126,8 @@ useEffect(() => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <button
-                onClick={() => setFilteredByLove(prev => !prev)}
-                className="love-filter-btn"
-              >
-                {filteredByLove ? 'Show All' : 'Show Love List'}
-              </button>
             </div>
+            
             {filteredLocals.length === 0 ? (
               <div className="card-horizontal no-result-card">
                 <div className="card-info">
@@ -140,21 +155,42 @@ useEffect(() => {
         ) : (
           localData ? (
             <div className="info-panel">
-              <button className="close-btn" onClick={() => setInfoLocal(null)}>← Back</button>
+              <IoIosCloseCircle className="close-btn" onClick={() => setInfoLocal(null)} />
+
               <img src={localData.image} alt={localData.name} className="info-img" />
-              <h2>{localData.name}</h2>
-              <p className="description">{localData.shortDescription}</p>
-              <p><strong>Rating:</strong> ⭐ {localData.rating}</p>
-              <p><strong>Address:</strong> {localData.address}</p>
-              <p><strong>Phone:</strong> {localData.tel}</p>
-              <p><strong>Website:</strong> <a href={localData.website} target="_blank" rel="noopener noreferrer">{localData.website}</a></p>
-              <p><strong>Google Maps:</strong> <a href={localData.mapURL} target="_blank" rel="noopener noreferrer">View</a></p>
-              <h4>Opening Hours:</h4>
-              <ul>
-                {Object.entries(localData.hours).map(([day, time]) => (
-                  <li key={day}><strong>{day}:</strong> {time}</li>
-                ))}
-              </ul>
+
+              <div className="info-description">
+                <div className="info-header">
+                  <h2>{localData.name}</h2>
+                  <h2 className="rating"><TiStarFullOutline/> {localData.rating}</h2>
+                </div>
+
+                <hr />
+                <div className="info-line">
+                  <span><FaPhone/> <a href={`tel:${localData.tel}`}>{localData.tel}</a></span>
+                </div>
+                <div className="info-line">
+                  <span><BsGlobe/> <a href={localData.website} target="_blank" rel="noopener noreferrer">{localData.name}</a></span> 
+                </div>
+                <div className="info-line">
+                  <span><FaLocationDot/> <a href={localData.mapURL} target="_blank" rel="noopener noreferrer">{localData.address}</a></span>
+                </div>
+                <hr />
+
+                <ul className="hours-list">
+                  {Object.entries(localData.hours)
+                    .sort(([dayA], [dayB]) => {
+                      const dayOrder = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+                      return dayOrder.indexOf(dayA) - dayOrder.indexOf(dayB);
+                    })
+                    .map(([day, time]) => (
+                      <li key={day}>
+                        <strong>{day}</strong> {time}
+                      </li>
+                    ))}
+                </ul>
+
+              </div>
             </div>
           ) : <p>Loading details...</p>
         )}

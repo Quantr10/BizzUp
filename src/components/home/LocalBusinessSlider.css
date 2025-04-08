@@ -3,32 +3,28 @@
     background-color: #fff;
   }
   
-  .slider-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .slider-header h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .show-more {
-    color: #ff4500;
-    font-size: 16px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    gap: 0.3rem;
-    transition: all 0.2s ease-in-out;
-  }
-/*   
-  cursor: pointer;
-  color: #ff4500;
-  transition: color 0.3s ease-in-out; */
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.slider-header h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.show-more {
+  color: #ff4409;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 0.3rem;
+  transition: all 0.2s ease-in-out;
+}
 
 .show-more:hover {
   transform: translateX(4px);

@@ -30,7 +30,7 @@ const LocalsData = [
     address: "14 E Washington St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/MAfhkcaEex5pkzR27",
     website: "http://www.conspireindiana.com/",
-    tel: "+17657192476",
+    tel: "+1 (765)-719-2476",
     hours: {
       Monday: "Closed",
       Tuesday: "11:00–18:00",
@@ -51,7 +51,7 @@ const LocalsData = [
     address: "17 S Vine St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/XpZYGL6MTJGHct7w9",
     website: "https://www.silverbellflowers.com/",
-    tel: "+17656308115",
+    tel: "+1 (765)-630-8115",
     hours: {
       Monday: "09:30–16:00",
       Tuesday: "09:30–16:00",
@@ -72,7 +72,7 @@ const LocalsData = [
     address: "24 S Indiana St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/nAycjuRMmPrkkWrF8",
     website: "http://taphouseburgers.com/",
-    tel: "+17653019326",
+    tel: "+1 (765)-301-9326",
     hours: {
       Monday: "Closed",
       Tuesday: "Closed",
@@ -93,7 +93,7 @@ const LocalsData = [
     address: "21 S Indiana St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/1DE9KAFNK9CLCson9",
     website: "http://www.brittsbloomingboutique.com/",
-    tel: "+17653019213",
+    tel: "+1 (765)-301-9213",
     hours: {
       Monday: "11:00–17:00",
       Tuesday: "11:00–17:00",
@@ -114,7 +114,7 @@ const LocalsData = [
     address: "2 W Seminary St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/LmovPKGjiYQsAF5KA",
     website: "https://www.innatdepauw.com/dining?_gl=1*4l1dxn*_up*MQ..*_ga*MjEwMDAzMTQ3LjE3NDM2NTQ2NzA.*_ga_ZQVD2RT05W*MTc0MzY1NDY2OS4xLjAuMTc0MzY1NDY2OS4wLjAuMA..#THEFLUTTERINGDUCK",
-    tel: "+17656581000",
+    tel: "+1 (765)-658-1000",
     hours: {
       Monday: "11:00–22:00",
       Tuesday: "11:00–22:00",
@@ -135,7 +135,7 @@ const LocalsData = [
     address: "100 W Walnut St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/B5gm4LNEUwY1xiCc8",
     website: "http://burdgeboots.com/",
-    tel: "+17656308247",
+    tel: "+1 (765)-630-8247",
     hours: {
       Monday: "Closed",
       Tuesday: "11:00–18:00",
@@ -156,7 +156,7 @@ const LocalsData = [
     address: "17 W Franklin St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/u6nYo9EeqhgSFgpr6",
     website: "http://www.almosthomerestaurant.com/",
-    tel: "+17656535788",
+    tel: "+1 (765)-653-5788",
     hours: {
       Monday: "11:00–20:00",
       Tuesday: "11:00–15:00",
@@ -177,7 +177,7 @@ const LocalsData = [
     address: "306 E Washington St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/apUZvVrCaE68EjzE8",
     website: "",
-    tel: "+17656530169",
+    tel: "+1 (765)-653-0169",
     hours: {
       Monday: "Closed",
       Tuesday: "11:00–21:00",
@@ -198,7 +198,7 @@ const LocalsData = [
     address: "11 W Franklin St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/F5cEgrRriGbPVESCA",
     website: "",
-    tel: "+17656308525",
+    tel: "+1 (765)-630-8525",
     hours: {
       Monday: "11:00–21:00",
       Tuesday: "11:00–21:00",
@@ -219,7 +219,7 @@ const LocalsData = [
     address: "102 E Franklin St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/LaCwJTW9vd1jy2nHA",
     website: "http://losthollowbeerco.com/",
-    tel: "+17656550115",
+    tel: "+1 (765)-655-0115",
     hours: {
       Monday: "Closed",
       Tuesday: "Closed",
@@ -240,7 +240,7 @@ const LocalsData = [
     address: "202 S College Ave, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/k6YX6arxKDijRsJP9",
     website: "",
-    tel: "+17656539200",
+    tel: "+1 (765)-653-9200",
     hours: {
       Monday: "Closed",
       Tuesday: "11:00-14:00 17:00-22:00",
@@ -261,7 +261,7 @@ const LocalsData = [
     address: "8 W Washington St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/TvcFgTQgTyGvMr5M8",
     website: "http://www.blushingbeausboutique.com/",
-    tel: "+17652763145",
+    tel: "+1 (765)-276-3145",
     hours: {
       Monday: "Closed",
       Tuesday: "11:00-17:00",
@@ -295,7 +295,7 @@ const LocalsData = [
     address: "18 S Jackson St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/zib4JP4UtZYzCYgT7",
     website: "http://www.thewhiskgreencastle.com/",
-    tel: "+17656536700",
+    tel: "+1 (765)-653-6700",
     hours: {
       Monday: "Closed",
       Tuesday: "Closed",
@@ -316,7 +316,7 @@ const LocalsData = [
     address: "16 S Jackson St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/QYjF4uBYZASJZECw9",
     website: "",
-    tel: "+17656536060",
+    tel: "+1 (765)-653-6060",
     hours: {
       Monday: "07:00-14:00",
       Tuesday: "07:00-14:00",
@@ -337,7 +337,7 @@ const LocalsData = [
     address: "13 S Indiana St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/ekRVW7abA8XbBnZJ8",
     website: "",
-    tel: "+17653238903",
+    tel: "+1 (765)-323-8903",
     hours: {
       Monday: "12:00-21:00",
       Tuesday: "12:00-21:00",
@@ -358,7 +358,7 @@ const LocalsData = [
     address: "2 E Walnut St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/uBgjysQ5hdpqPzJs8",
     website: "https://breadworksbybridges.com/",
-    tel: "+17656308890",
+    tel: "+1 (765)-630-8890",
     hours: {
       Monday: "Closed",
       Tuesday: "07:00-15:00",
@@ -379,7 +379,7 @@ const LocalsData = [
     address: "19 N Indiana St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/X23DQqwjMzgBSz6f9",
     website: "https://www.bridgeswinebar.com/",
-    tel: "+17656530021",
+    tel: "+1 (765)-653-0021",
     hours: {
       Monday: "Closed",
       Tuesday: "17:00-20:00",
@@ -400,7 +400,7 @@ const LocalsData = [
     address: "17 S Indiana St, Greencastle, IN 46135",
     mapURL: "https://maps.app.goo.gl/tLbM4icNTxCkQbAY9",
     website: "http://mooresbarandgrill.com/",
-    tel: "+17656539939",
+    tel: "+1 (765)-653-9939",
     hours: {
       Monday: "11:00-1:00",
       Tuesday: "11:00-1:00",

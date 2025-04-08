@@ -1,6 +1,8 @@
 import React from 'react';
 import './LocalBusinessCard.css';
 import { useNavigate } from 'react-router-dom';
+import { TiStarFullOutline } from "react-icons/ti";
+
 
 const LocalBusinessCard = ({ id, name, image, shortDescription, rating }) => {
   const navigate = useNavigate();
@@ -15,7 +17,10 @@ const LocalBusinessCard = ({ id, name, image, shortDescription, rating }) => {
       <div className="business-info">
         <h4 className="business-name">{name}</h4>
         <p className="business-desc">{shortDescription}</p>
-        <p className="business-rating">⭐ {rating}</p>
+        <span className="rating-container">
+          <TiStarFullOutline className="icon" />
+          <div className="rating">{rating}</div>
+        </span>
       </div>
     </div>
   );
