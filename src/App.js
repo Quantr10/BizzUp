@@ -7,7 +7,7 @@ import NavBar from './components/navBar/NavBar';
 import Register from './components/register/Register';
 import Scan from './components/scan/Scan';
 import Deals from './components/deals/Deals';
-import UploadLocals from './components/locals/UploadLocals';
+import UploadData from './components/uploadData/UploadData';
 
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -40,7 +40,7 @@ function AppContent() {
         <Route path="/locals" element={<Locals />} />
         <Route path="/scan" element={<Scan />} />
         <Route path="/deals" element={<Deals />} />
-        {/* <Route path="/upload" element={<UploadLocals />} /> */}
+        {/* <Route path="/upload" element={<UploadData />} /> */}
       </Routes>
 
       <ToastContainer />

@@ -3,8 +3,8 @@ import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import './LocalsMap.css';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../Firebase';
-import reddot from '../../assets/reddot.png';
-import redpin from '../../assets/redpin.png';
+import reddot from '../../assets/red dot.png';
+import redpin from '../../assets/red pin.png';
 
 const defaultCenter = {
   lat: 39.64323822800205,

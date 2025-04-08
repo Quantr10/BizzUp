@@ -1,7 +1,6 @@
 .card-horizontal {
   display: flex;
   margin-top: 10px;
-  cursor: pointer;
   max-width: 100%;
   height: 170px;
   border-radius: 12px;
@@ -19,18 +18,18 @@
 }
 
 .card-info-wrapper:hover {
-  border: 2px solid #ff4500;
+  border: 2px solid #ff4409;
   transition: border 0.2s ease;
   border-left: none;
 }
 
 .card-info-wrapper.selected {
-  border: 2px solid #ff4500;
+  border: 2px solid #ff4409;
   border-left: none;
 }
 
 .card-info-wrapper.selected h3 {
-  color: #ff4500;
+  color: #ff4409;
 }
 
 .card-image {
@@ -63,12 +62,12 @@
   }
 
   .card-info-wrapper:hover {
-    border-left: 2px solid #ff4500;
+    border-left: 2px solid #ff4409;
     border-top: none;
   }
 
   .card-info-wrapper.selected {
-    border-left: 2px solid #ff4500;
+    border-left: 2px solid #ff4409;
     border-top: none;
   }
 }
@@ -114,7 +113,7 @@
 }
 
 .rating {
-  color: #ff4500;
+  color: #ff4409;
   font-weight: 500;
 }
 
@@ -125,6 +124,6 @@
 
 .icon {
   font-size: 18px;
-  color: #ff4500;
+  color: #ff4409;
   cursor: pointer;
 }

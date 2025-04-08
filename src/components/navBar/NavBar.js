@@ -42,7 +42,7 @@ const NavBar = () => {
       </div>
 
       <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-        {["HOME", "DEALS", "LOCALS", "MY REWARDS", "SCAN"].map((item) => (
+        {["HOME", "LOCALS", "DEALS", "SCAN"].map((item) => (
           <span
             key={item}
             className={`nav-item ${active === item ? "active" : ""}`}

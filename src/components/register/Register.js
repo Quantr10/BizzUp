@@ -29,7 +29,7 @@ const Register = () => {
         await setDoc(doc(db, "Users", user.uid), {
           email: user.email,
           name: name,
-          points: 0,
+          points: 100,
         });
       }
       console.log("User Registered Successfully");
