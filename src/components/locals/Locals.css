@@ -62,7 +62,6 @@
 
 .no-results-card {
   height: 120px;
-  border: 2px dashed #ccc;
   justify-content: center;
   align-items: center;
   background-color: #fefefe;
@@ -152,7 +151,7 @@ hr {
   justify-content: space-between;
   padding: 4px 0;
   font-size: 14px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ccc;
 }
 
 .day {

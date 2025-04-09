@@ -47,7 +47,7 @@
 
 .slider-container::-webkit-scrollbar-thumb {
   background: #ccc;
-  border-radius: 4px;
+  border-radius: 12px;
 }
 
 .horizontal-scroll-container {

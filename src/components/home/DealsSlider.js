@@ -4,11 +4,9 @@ import { collection, getDocs } from 'firebase/firestore';
 import './HomePageSlider.css';
 import { FaArrowRight } from 'react-icons/fa';
 import DealsCard from './DealsCard';
-import { useNavigate } from 'react-router-dom';
 
 const DealsSlider = () => {
   const [deals, setDeals] = useState([]);
-//   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDeals = async () => {

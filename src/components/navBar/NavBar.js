@@ -57,13 +57,17 @@ const NavBar = () => {
         <FaUser className="user-icon" onClick={() => setShowUserTab(!showUserTab)} />
         {showUserTab && userDetails && (
           <div className="user-tab">
-            <p><strong>Hi, {userDetails.name}</strong></p>
-            <p>{userDetails.email}</p>
+            <div className="user-info">
+              <p className="greeting">Hi, <strong>{userDetails.name}</strong></p>
+              <p className="email">{userDetails.email}</p>
+              <p className="points">Points: {userDetails.points}</p>
+            </div>
             <hr />
-            <button onClick={handleLogout}>Logout</button>
+            <button className="logout-btn" onClick={handleLogout}>Logout</button>
           </div>
         )}
       </div>
+
 
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         ☰

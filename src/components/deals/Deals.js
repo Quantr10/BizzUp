@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../Firebase';
 import { collection, getDocs, doc, updateDoc, getDoc } from 'firebase/firestore';
 import { useUser } from '../contexts/UserContext';
+import { useLocation } from 'react-router-dom';
 import DealsCard from './DealsCard';
 import Barcode from 'react-barcode';
 import { FaUserCircle } from "react-icons/fa";
@@ -9,13 +10,13 @@ import { toast } from 'react-toastify';
 import mystery from '../../assets/mystery.png';
 import present from '../../assets/present.png';
 import { IoIosCloseCircle } from "react-icons/io";
-import { MdOutlineContentCopy } from "react-icons/md";
-
+import task from '../../assets/task.png';
 
 import './Deals.css';
 
 const Deals = () => {
   const { userDetails } = useUser();
+  const location = useLocation();
   const [deals, setDeals] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [tab, setTab] = useState('hot');
@@ -23,7 +24,6 @@ const Deals = () => {
   const [myDeals, setMyDeals] = useState([]);
   const [userPoints, setUserPoints] = useState(0);
 
-  
   useEffect(() => {
     const fetchDeals = async () => {
       try {
@@ -51,29 +51,30 @@ const Deals = () => {
     fetchUserData();
   }, [userDetails]);
 
+  useEffect(() => {
+    if (location.state?.dealId && deals.length > 0) {
+      const matchedDeal = deals.find((d) => d.id === location.state.dealId);
+      if (matchedDeal) setSelectedDeal(matchedDeal);
+    }
+  }, [location.state, deals]);
+
   const handleRedeem = async () => {
     if (!userDetails || !selectedDeal) return;
-  
-    // Prevent duplicate redemption
     if (myDeals.includes(selectedDeal.id)) {
       toast.warning('You have already claimed this deal!');
       return;
     }
-  
     if (userPoints < selectedDeal.points) {
       toast.error('Not enough points!');
       return;
     }
-  
     const userRef = doc(db, 'Users', userDetails.uid);
     const updatedPoints = userPoints - selectedDeal.points;
     const updatedMyDeals = [...myDeals, selectedDeal.id];
-  
     await updateDoc(userRef, {
       points: updatedPoints,
       myDeals: updatedMyDeals,
     });
-  
     setUserPoints(updatedPoints);
     setMyDeals(updatedMyDeals);
     toast.success('Deal redeemed successfully!');
@@ -97,29 +98,12 @@ const Deals = () => {
         {!selectedDeal ? (
           <>
             <div className="tab-buttons">
-              <button
-                className={tab === 'hot' ? 'active' : ''}
-                onClick={() => setTab('hot')}
-              >
-                HOT DEALS
-              </button>
-              <button
-                className={tab === 'my' ? 'active' : ''}
-                onClick={() => setTab('my')}
-              >
-                MY DEALS
-              </button>
+              <button className={tab === 'hot' ? 'active' : ''} onClick={() => setTab('hot')}>HOT DEALS</button>
+              <button className={tab === 'my' ? 'active' : ''} onClick={() => setTab('my')}>MY DEALS</button>
             </div>
-
             <div className="search-bar">
-              <input
-                type="text"
-                placeholder="Search by location..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+              <input type="text" placeholder="Search by location..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
-
             {displayDeals.length === 0 ? (
               <div className="card-horizontal no-result-card">
                 <div className="card-info">
@@ -129,12 +113,7 @@ const Deals = () => {
               </div>
             ) : (
               displayDeals.map((deal, index) => (
-                <DealsCard
-                  key={index}
-                  deal={deal}
-                  onInfoClick={() => setSelectedDeal(deal)}
-                  tab={tab}
-                />
+                <DealsCard key={index} deal={deal} onInfoClick={() => setSelectedDeal(deal)} tab={tab} />
               ))
             )}
           </>
@@ -147,37 +126,20 @@ const Deals = () => {
                 <h2>{selectedDeal.title}</h2>
                 <h2 className="rating">{selectedDeal.points} pts </h2>
               </div>
-
               <hr />
-              <div className="info-line">
-                <p>{selectedDeal.tagline}</p>
-              </div>
-
-              <div className="info-line">
-                <p>{selectedDeal.description}</p>  
-              </div>
+              <div className="info-line"><p>{selectedDeal.tagline}</p></div>
+              <div className="info-line"><p>{selectedDeal.description}</p></div>
               <hr />
-
               <div className="info-columns">
                 <div className="info-line">
                   <h4>Discounts:</h4>
-                  <ul>
-                    {selectedDeal.discounts.map((discount, idx) => (
-                      <li key={idx}>{discount}</li>
-                    ))}
-                  </ul>
-                </div>            
-
+                  <ul>{selectedDeal.discounts.map((discount, idx) => <li key={idx}>{discount}</li>)}</ul>
+                </div>
                 <div className="info-line">
                   <h4>Locations:</h4>
-                  <ul>
-                    {selectedDeal.locations.map((loc, idx) => (
-                      <li key={idx}>{loc}</li>
-                    ))}
-                  </ul>
+                  <ul>{selectedDeal.locations.map((loc, idx) => <li key={idx}>{loc}</li>)}</ul>
                 </div>
               </div>
-
             </div>
             <div className="deal-action">
               {tab === 'my' && isMyDeal ? (
@@ -211,32 +173,33 @@ const Deals = () => {
           <div className="rewards-list">
             <div className="mystery-box-card">
               <div className="box-left">
-                <img src={mystery} alt="Mystery Box" className="mystery-img" />
+                <img src={mystery} style={{ color: ' #ff4500' }} alt="Mystery Box" className="mystery-img" />
               </div>
-
               <div className="box-right">
                 <h3 className="box-title">Mystery Box</h3>
-                <p className="mystery-price">50 points/each</p>
-                <button className="buy-btn">BUY</button>
+                <p className="box-desc">50 pts/each</p>
+                <hr className="box-desc"/>
+                <button className="buy-btn">OPEN</button>
               </div>
             </div>
+
             <div className="bonus-tasks">
-              <h4 className="box-title">Weekly Challenges</h4>
-              <div className="task-row">
-                <span className="task-desc">Share a photo</span>
-                <span className="task-points">+5 pts</span>
+              <div className="box-left">
+                <h4 className="box-title">Weekly Challenges</h4>
+                <p className="box-desc">Share a photo for 5 pts</p>
+                <p className="box-desc">Leave a review for 10 pts</p>
+                <button className="buy-btn">GO</button>
               </div>
-              <div className="task-row">
-                <span className="task-desc">Leave a review</span>
-                <span className="task-points">+10 pts</span>
+              <div className="box-right">
+                <img src={task} alt="Bonus Task" className="bonus-img" />
               </div>
             </div>
 
             <div className="referral-section">
               <h4 className="box-title">Referral Bonus</h4>
-              <p className="referral-desc">Invite your friends and earn 10 points</p>
+              <p className="box-desc">Invite your friends and earn 10 points</p>
               
-              <div className="referral-box">
+              <div className="box-desc referral-box">
                 <div className="referral-code">
                   <label>Your Code</label>
                   <div className="code">QUAN10</div>
@@ -250,7 +213,7 @@ const Deals = () => {
           </div>
 
           <div className="monthly-board">
-              <h3 className="board-title">April's Wrap</h3>
+              <h3 className="box-title">April's Wrap</h3>
               <img src={present} alt="Rewards" className="rewards-img" />
               <p className="board-highlight">Look what your friends got!</p>
 
@@ -258,16 +221,26 @@ const Deals = () => {
                 <li>
                   <span className="rank-num">1</span>
                   < FaUserCircle className='avatar'/>
-                  <span className="name highlight">Quan Tran ‘27</span>
+                  <span className="name">Quan Tran ‘27</span>
                 </li>
                 <li>
                   <span className="rank-num">2</span>
-                  < FaUserCircle />
+                  < FaUserCircle className='avatar'/>
                   <span className="name">Astra Vo ‘28</span>
                 </li>
                 <li>
                   <span className="rank-num">3</span>
-                  < FaUserCircle />
+                  < FaUserCircle className='avatar'/>
+                  <span className="name">Emily Huynh ‘28</span>
+                </li>
+                <li>
+                  <span className="rank-num">4</span>
+                  < FaUserCircle className='avatar'/>
+                  <span className="name">Emily Huynh ‘28</span>
+                </li>
+                <li>
+                  <span className="rank-num">5</span>
+                  < FaUserCircle className='avatar'/>
                   <span className="name">Emily Huynh ‘28</span>
                 </li>
               </ol>
