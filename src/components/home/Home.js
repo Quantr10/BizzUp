@@ -9,7 +9,7 @@ function Home() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div style={{ marginBottom: '20px' }}>
       <SliderImg />
       <DealsSlider/>
       <LocalsSlider />

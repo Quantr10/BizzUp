@@ -35,7 +35,7 @@ const LocalsMap = ({ locals, selectedLocal, setSelectedLocal }) => {
     <GoogleMap
       mapContainerClassName="map-container"
       center={defaultCenter}
-      zoom={18}
+      zoom={17}
       onLoad={onLoad}
     >
       {locals.map((local) => {

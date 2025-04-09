@@ -173,7 +173,7 @@ const Deals = () => {
           <div className="rewards-list">
             <div className="mystery-box-card">
               <div className="box-left">
-                <img src={mystery} style={{ color: ' #ff4500' }} alt="Mystery Box" className="mystery-img" />
+                <img src={mystery} alt="Mystery Box" className="mystery-img" />
               </div>
               <div className="box-right">
                 <h3 className="box-title">Mystery Box</h3>
@@ -221,27 +221,27 @@ const Deals = () => {
                 <li>
                   <span className="rank-num">1</span>
                   < FaUserCircle className='avatar'/>
-                  <span className="name">Quan Tran ‘27</span>
+                  <span className="name">Quan Tran</span>
                 </li>
                 <li>
                   <span className="rank-num">2</span>
                   < FaUserCircle className='avatar'/>
-                  <span className="name">Astra Vo ‘28</span>
+                  <span className="name">Astra Vo</span>
                 </li>
                 <li>
                   <span className="rank-num">3</span>
                   < FaUserCircle className='avatar'/>
-                  <span className="name">Emily Huynh ‘28</span>
+                  <span className="name">Emily Huynh</span>
                 </li>
                 <li>
                   <span className="rank-num">4</span>
                   < FaUserCircle className='avatar'/>
-                  <span className="name">Emily Huynh ‘28</span>
+                  <span className="name">Phuong Tran</span>
                 </li>
                 <li>
                   <span className="rank-num">5</span>
                   < FaUserCircle className='avatar'/>
-                  <span className="name">Emily Huynh ‘28</span>
+                  <span className="name">Anh Nguyen</span>
                 </li>
               </ol>
           </div>
