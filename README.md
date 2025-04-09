@@ -36,13 +36,13 @@ Whether you’re a resident, student, or visitor, BizzUp helps you discover, sup
 
 ## ✨ Features  
 
-### 🔦 Support for Non-Food-Based Businesses  
+### Support for Non-Food-Based Businesses  
 BizzUp highlights *all* types of businesses—not just food and drink. From boutiques to craft stores, we ensure every business has a voice.
 
-### 🗺️ Boosting Local Tourism  
+### Boosting Local Tourism  
 Uncover local treasures with ease. BizzUp promotes hidden gems and keeps the community updated on new deals, experiences, and promotions.
 
-### 🎁 Loyalty Points System  
+### Loyalty Points System  
 Earn points by checking in at local businesses and redeem them for exclusive deals and discounts. This not only benefits customers but also drives repeat traffic and loyalty for businesses.
 
 ---
