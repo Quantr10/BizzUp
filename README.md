@@ -1,6 +1,6 @@
 # BizzUp
 
-### 🟢 Live Demo  
+## 🟢 Live Demo  
 Check out the deployed web application here:  
 👉 [https://hackathon25-lake.vercel.app/](https://hackathon25-lake.vercel.app/)
 
